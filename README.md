@@ -22,4 +22,7 @@ Often I'm googling for the very same coding issues! Think that it would be a goo
 `sessionInfo()`
 <br>
 
+### Rename dataframe column
+`colnames(df)[1] <- "NewColName"`
+<br>
 
