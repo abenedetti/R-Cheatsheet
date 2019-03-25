@@ -10,11 +10,16 @@ Often I'm googling for the very same coding issues! Think that it would be a goo
 `levels(df$column)[levels(df$column)=='Old Value'] <- 'New Value'`
 <br>
 
-### Create a dataframe
+### Create a non empty dataframe
 `column1 <- c(1,2,3,4,5)`<br>
 `column2 <- c('hi', 'have', 'a', 'nice', 'day')`<br>
 `column3 <- c(TRUE, TRUE, FALSE, TRUE, FALSE)`<br>
 `df <- data.frame(column1, column2, column3)`
+<br>
+
+### Create a empty dataframe
+`df <- data.frame(column1=character(), column2=integer(), column3=character())`<br>
+For each column you're able to set a data type.
 <br>
 
 ### Check for R environment infos
