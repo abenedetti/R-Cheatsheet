@@ -60,7 +60,7 @@ For each column you're able to set a data type.
  
  Follow this [complete guide](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html) by <i>Hao Zhu</i> on using the `kableExtra` package.
 
-### 10) Correaltion plot
+### 10) Correlation plot
 `library(ISLR)`<br>
 `library(GGally)`<br>
 `ggpairs(iris)`<br>
