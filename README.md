@@ -2,32 +2,63 @@
 
 Often I'm googling for the very same coding issues! Think that it would be a good idea to start my own R-cheatsheet. :grin:
 
-### R Markdown coding character
+### 1) R Markdown coding character
 `
 <br>
 
-### Change value of a categorical variable in a dataframe
+### 2) Change value of a categorical variable in a dataframe
 `levels(df$column)[levels(df$column)=='Old Value'] <- 'New Value'`
 <br>
 
-### Create a non empty dataframe
+### 3) Create a non empty dataframe
 `column1 <- c(1,2,3,4,5)`<br>
 `column2 <- c('hi', 'have', 'a', 'nice', 'day')`<br>
 `column3 <- c(TRUE, TRUE, FALSE, TRUE, FALSE)`<br>
 `df <- data.frame(column1, column2, column3)`
 <br>
 
-### Create a empty dataframe
+### 4) Create a empty dataframe
 `df <- data.frame(column1=character(), column2=integer(), column3=character())`<br>
 For each column you're able to set a data type.
 <br>
 
-### Check for R environment infos
+### 5) Check for R environment infos
 `version`<br>
 `sessionInfo()`
 <br>
 
-### Rename dataframe column
+### 6) Rename dataframe column
 `colnames(df)[1] <- "NewColName"`
 <br>
 
+### 7) Working with [sparse matrices](https://en.wikipedia.org/wiki/Sparse_matrix)
+`library(Matrix)`<br>
+`sparseMat <- sparseMatrix(i = as.integer(df$Col1), j = as.integer(df$Col2), x = df$Coldata)`<br>
+`colnames(sparseMat) = levels(df$Col2)`<br>
+`rownames(sparseMat) = levels(df$Col1)`<br>
+
+### 8) Save cookies information while scraping an url
+`library(rvest)`<br>
+`library (tidyverse)`<br>
+`library (httr)`<br>
+
+`#retrieve session cookie by taking the url of the main page`<br>
+`url <- "https://salesweb.civilview.com/Sales/SalesSearch?countyId=3" #sample url`<br>
+`urlInfo <- GET(url)`<br>
+
+`#create a new dataframe to save the data (called df)`<br>
+`see tip 3 of the cheatsheet`<br>
+`#retrieve the data (example for the first row data)`<br>
+`responseDetail <- GET(df[1,c('Details')], set_cookies(`urlInfo$cookies[6]` = paste0('"',urlInfo$cookies[7],'"')))`<br>
+
+`#scrape the html tags of interest`<br>
+`readUrlHtmlDetail <- read_html(responseDetail) %>% html_nodes("td")`<br>
+  
+ [Here's](https://stackoverflow.com/questions/55169844/unable-to-connect-to-https-site-with-r/55346855#55346855) a working sample.
+  
+  
+  
+  
+  
+  
+  
