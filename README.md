@@ -56,7 +56,11 @@ For each column you're able to set a data type.
   
  [Here's](https://stackoverflow.com/questions/55169844/unable-to-connect-to-https-site-with-r/55346855#55346855) a working sample.
   
-  
+ ### 9) Nice looking tables in R Markdown
+ 
+ Follow this [complete guide](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html) by <i>Hao Zhu</i> on using the `kableExtra` package.
+ 
+ 
   
   
   
