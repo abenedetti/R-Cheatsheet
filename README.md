@@ -59,7 +59,11 @@ For each column you're able to set a data type.
  ### 9) Nice looking tables in R Markdown
  
  Follow this [complete guide](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html) by <i>Hao Zhu</i> on using the `kableExtra` package.
- 
+
+### 10) Correaltion plot
+`library(ISLR)`<br>
+`library(GGally)`<br>
+`ggpairs(iris)`<br>
  
   
   
