@@ -65,7 +65,10 @@ For each column you're able to set a data type.
 `library(GGally)`<br>
 `ggpairs(iris)`<br>
  
-  
+### 11) Using <i>tapply</i> function
+`tapply(argument 1, argument 2 , argument 3)`<br>
+tapply splits (groups) the data by the second argument you give, and then applies the third argument function to the variable given as the first argument.<br>
+
   
   
   
