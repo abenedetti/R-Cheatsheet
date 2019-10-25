@@ -2,8 +2,9 @@
 
 Often I'm googling for the very same coding issues! Think that it would be a good idea to start my own R-cheatsheet. :grin:
 
-### 1) R Markdown coding character
-`
+### 1) R Markdown special characters
+coding: `<br>
+tilde: ~  (ALT + 1 2 6)
 <br>
 
 ### 2) Change value of a categorical variable in a dataframe
