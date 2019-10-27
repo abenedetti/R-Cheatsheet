@@ -57,9 +57,9 @@ For each column you're able to set a data type.
   
  [Here's](https://stackoverflow.com/questions/55169844/unable-to-connect-to-https-site-with-r/55346855#55346855) a working sample.
   
- ### 9) Nice looking tables in R Markdown
+### 9) Nice looking tables in R Markdown
  
- Follow this [complete guide](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html) by <i>Hao Zhu</i> on using the `kableExtra` package.
+Follow this [complete guide](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html) by <i>Hao Zhu</i> on using the `kableExtra` package.
 
 ### 10) Correlation plot
 `library(ISLR)`<br>
@@ -70,7 +70,9 @@ For each column you're able to set a data type.
 `tapply(argument 1, argument 2 , argument 3)`<br>
 tapply splits (groups) the data by the second argument you give, and then applies the third argument function to the variable given as the first argument.<br>
 
-  
+### 12) Working with NAs
+
+Remove NAs values: `na.omit(...)`
   
   
   
