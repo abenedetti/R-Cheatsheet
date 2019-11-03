@@ -109,14 +109,17 @@ Given a `train` and `test` sets, the dependent value `outcome`.
 
 * for linear regression:
   model: `aModel <- lm(outcome ~ x + y + z, data = train)`<br>
-  prediction on test set: `prediction <- predict(aModel, newdata = test$outcome)`<br>
+  prediction on test set <sup>(*)</sup>: `prediction <- predict(aModel, newdata = test$outcome)`<br>
 
 * for logistic regression:
   model: `aLogModel <- glm(outcome ~ x + y + z, data = train, family = binomial)`<br>
-  prediction on test set: `predictionLog <- predict(aLogModel, type="response", newdata = test)`<br>
+  prediction on test set <sup>(*)</sup>: `predictionLog <- predict(aLogModel, type="response", newdata = test)`<br>
   confusion matrix with threshold of 0.5: `table(test$outcome, predictionLog > 0.5)`<br>
   test set AUC with ROCR library: `ROCRpred <- prediction(predictionLog, test$outcome)`<br>
   `as.numeric(performance(ROCRpred, "auc")@y.values)`<br>
+  
+  <sup>(*): the `newdata` argument is filled when when want to make a prediction on a dataset that wasn't used to train our model</sup>
+  
   
 ### 16) Missing data imputation with *Multiple Imputation by Chained Equations*
   
