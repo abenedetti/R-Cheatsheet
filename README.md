@@ -117,3 +117,15 @@ Given a `train` and `test` sets, the dependent value `outcome`.
   confusion matrix with threshold of 0.5: `table(test$outcome, predictionLog > 0.5)`<br>
   test set AUC with ROCR library: `ROCRpred <- prediction(predictionLog, test$outcome)`<br>
   `as.numeric(performance(ROCRpred, "auc")@y.values)`<br>
+  
+### 16) Missing data imputation with *Multiple Imputation by Chained Equations*
+  
+ * load `mice` package<br>
+ * suppose we have dataframe `aDataFrame` with X, Y, Z and outcome variables<br>
+ * suppose Y and Z have a decent number of NAs (missing values)<br>
+ * create a new dataframe `simple` with X, Y, Z (we don't want the `outcome` variable): `simple <- aDataFrame[c("X","Y","Z")]`<br>
+ * create a new dataframe `imputed`: `imputed <- complete(mice(simple))`<br>
+ * by checking `summary(imputed)` we see that there are no more NAs <br>
+ * last step is to copy over the new values of imputed dataframe: `aDataframe$Y <- imputed$Y` and `aDataframe$Z <- imputed$Y`
+  
+  
