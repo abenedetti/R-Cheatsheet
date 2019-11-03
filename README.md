@@ -89,5 +89,17 @@ Remove NAs values: `na.omit(...)`
 `train = subset(data, spl == TRUE)`<br>
 `test = subset(data, spl == FALSE)`<br>
   
-  
+### 14) Create ROC curves
+
+`library(ROCR)`<br>
+`# Prediction function`<br>
+`ROCRpred = prediction(`predictedValues`,` actualValues`)`<br>
+`# Performance function`<br>
+`ROCRperf = performance(ROCRpred, "tpr", "fpr")`<br>
+`# Plot ROC curve`<br>
+`plot(ROCRperf)`<br>
+`# Add colors`<br>
+`plot(ROCRperf, colorize=TRUE)`<br>
+`# Add threshold labels`<br>
+`plot(ROCRperf, colorize=TRUE, print.cutoffs.at=seq(0,1,by=0.1), text.adj=c(-0.2,1.7))`<br>
   
