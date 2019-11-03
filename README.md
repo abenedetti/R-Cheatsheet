@@ -73,6 +73,21 @@ tapply splits (groups) the data by the second argument you give, and then applie
 ### 12) Working with NAs
 
 Remove NAs values: `na.omit(...)`
+
+### 13) Splitting datasets (train/test sets)
+
+#### for continuous outcome (70% train data)
+
+`spl = sample(1:nrow(data), size=0.7 * nrow(data))`<br>
+`train = data[spl,]`<br>
+`test = data[-spl,]`<br>
+
+#### for categorical outcome (70% train data)
+
+`library(caTools)`<br>
+`spl = sample.split(data$Outcome, SplitRation = 0.7)`<br>
+`train = subset(data, spl == TRUE)`<br>
+`test = subset(data, spl == FALSE)`<br>
   
   
   
