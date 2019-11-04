@@ -102,6 +102,8 @@ Remove NAs values: `na.omit(...)`
 `plot(ROCRperf, colorize=TRUE)`<br>
 `# Add threshold labels`<br>
 `plot(ROCRperf, colorize=TRUE, print.cutoffs.at=seq(0,1,by=0.1), text.adj=c(-0.2,1.7))`<br>
+`# Calculate the AUC (area under the curve) of the model`<br>
+`as.numeric(performance(ROCRpred, "auc")@y.values)`
   
 ### 15) Predictions with `lm` and `glm` packages
 
