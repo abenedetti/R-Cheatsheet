@@ -85,7 +85,7 @@ Remove NAs values: `na.omit(...)`
 #### for categorical outcome (70% train data)
 
 `library(caTools)`<br>
-`spl = sample.split(data$Outcome, SplitRation = 0.7)`<br>
+`spl = sample.split(data$Outcome, SplitRatio = 0.7)`<br>
 `train = subset(data, spl == TRUE)`<br>
 `test = subset(data, spl == FALSE)`<br>
   
