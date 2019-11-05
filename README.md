@@ -3,7 +3,7 @@
 Often I'm googling for the very same coding issues! Think that it would be a good idea to start my own R-cheatsheet. :grin:
 
 ### 1) R Markdown special characters
-coding: ` (ALT + 9 6)<br>
+backtick: ` (ALT + 9 6)<br>
 tilde: ~  (ALT + 1 2 6)
 <br>
 
