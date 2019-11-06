@@ -107,7 +107,7 @@ Remove NAs values: `na.omit(...)`
   
 ### 15) Predictions with `lm` and `glm` packages
 
-Given a `train` and `test` sets, the dependent value `outcome`.
+Given a `train` and `test` sets, the dependent variable `outcome` and independent variables `x`, `y` and `z`.
 
 * for linear regression:
   model: `aModel <- lm(outcome ~ x + y + z, data = train)`<br>
@@ -132,5 +132,16 @@ Given a `train` and `test` sets, the dependent value `outcome`.
  * create a new dataframe `imputed`: `imputed <- complete(mice(simple))`<br>
  * by checking `summary(imputed)` we see that there are no more NAs <br>
  * last step is to copy over the new values of imputed dataframe: `aDataframe$Y <- imputed$Y` and `aDataframe$Z <- imputed$Y`
-  
-  
+
+
+### 17) Classification and regression trees CART
+
+`library(rpart) #main library`
+`library(rpart.plot) #plots library`
+
+Given a `train` and `test` sets, the dependent variable `outcome` and independent variables `x`, `y` and `z`.
+
+#### Classification
+
+`StevensTree = rpart(outcome ~ x + y + z, data = train, method="class", minbucket=25)`
+
