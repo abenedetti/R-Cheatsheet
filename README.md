@@ -143,5 +143,9 @@ Given a `train` and `test` sets, the dependent variable `outcome` and independen
 
 #### Classification
 
-`StevensTree = rpart(outcome ~ x + y + z, data = train, method="class", minbucket=25)`
+* tree model:`Tree = rpart(outcome ~ x + y + z, data = train, method="class", minbucket=25)`
+* tree plot: `prp(Tree)`
+* prediction: `predict(Tree, newdata = test, type = "class")`
+
+
 
