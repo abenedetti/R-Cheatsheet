@@ -149,8 +149,16 @@ Given a `train` and `test` sets, the dependent variable `outcome` and independen
 
 <sup>(*): the `type="class"` is used to create predicted values and not probabilities</sup>
 
+### 18) Random forests
 
-### 18) Cross validation
+`library(randomForest)`
+
+Given a `train` and `test` sets, the dependent variable `outcome` and independent variables `x`, `y` and `z`.
+
+`modelRF <- randomForest(outcome ~ x + y + z, data = train, ntree=`<number of trees>`, nodesize=`<eqv to minbuckey value>`)`
+
+
+### 19) Cross validation
 
 `library(caret)`<br>
 `library(e1071)`<br>
