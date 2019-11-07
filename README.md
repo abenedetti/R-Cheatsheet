@@ -158,7 +158,7 @@ Given a `train` and `test` sets, the dependent variable `outcome` and independen
 Given a `train` and `test` sets, the dependent variable `outcome` and independent variables `x`, `y` and `z`.
 
 *Define cross-validation experiment*<br>
-`numFolds = trainControl( method = "cv", number = 10 )`
+`numFolds = trainControl( method = "cv", number = 10 )`<br>
 `cpGrid = expand.grid( .cp = seq(0.01,0.5,0.01))`
 
 Cross validation of 10 folds `number` and complexity parameter canditate parameters in range 0,01 to 0,5 by 0,01 steps.
