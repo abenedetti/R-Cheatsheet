@@ -169,7 +169,7 @@ Cross validation of 10 folds `number` and complexity parameter canditate paramet
 The cross validation returns the output cp table with the optimal cp value (cp<sub>opt</sub>)
 
 *Create a new CART model*<br>
-`modelCV = rpart(outcome ~ x + y + z, data = train, method="class", cp = `cp<sub>opt</sub>`)`
+`modelCV = rpart(outcome ~ x + y + z, data = train, method="class", cp = `cp<sub>opt</sub>`)`<br>
 <sub>we set the method classification since we're dealing with a classification problem</sub>
 
 *Make predictions*<br>
