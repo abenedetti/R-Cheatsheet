@@ -149,3 +149,32 @@ Given a `train` and `test` sets, the dependent variable `outcome` and independen
 
 <sup>(*): the `type="class"` is used to create predicted values and not probabilities</sup>
 
+
+### 18) Cross validation
+
+`library(caret)`<br>
+`library(e1071)`<br>
+
+Given a `train` and `test` sets, the dependent variable `outcome` and independent variables `x`, `y` and `z`.
+
+*Define cross-validation experiment*<br>
+`numFolds = trainControl( method = "cv", number = 10 )`
+`cpGrid = expand.grid( .cp = seq(0.01,0.5,0.01))`
+
+Cross validation of 10 folds `number` and complexity parameter canditate parameters in range 0,01 to 0,5 by 0,01 steps.
+
+*Perform the cross validation*<br>
+`train(outcome ~ x + y + z, data = train, method = "rpart", trControl = numFolds, tuneGrid = cpGrid )`
+
+The cross validation returns the output cp table with the optimal cp value (cp<sub>opt</sub>)
+
+*Create a new CART model*<br>
+`modelCV = rpart(outcome ~ x + y + z, data = train, method="class", cp = `cp<sub>opt</sub>`)`
+<sub>we set the method classification since we're dealing with a classification problem</sub>
+
+*Make predictions*<br>
+`PredictCV = predict(StevensTreeCV, newdata = Test, type = "class")`<br>
+<sub>we set the method classification since we're dealing with a classification problem</sub>
+
+
+
