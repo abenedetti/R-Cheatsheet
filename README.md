@@ -136,8 +136,8 @@ Given a `train` and `test` sets, the dependent variable `outcome` and independen
 
 ### 17) Classification and regression trees CART
 
-`library(rpart) #main library`
-`library(rpart.plot) #plots library`
+`library(rpart) #main library`<br>
+`library(rpart.plot) #plots library`<br>
 
 Given a `train` and `test` sets, the dependent variable `outcome` and independent variables `x`, `y` and `z`.
 
