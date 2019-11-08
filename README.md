@@ -143,11 +143,12 @@ Given a `train` and `test` sets, the dependent variable `outcome` and independen
 
 #### Classification
 
-* tree model:`Tree = rpart(outcome ~ x + y + z, data = train, method="class", minbucket=25)`
+* tree model <sup>(**)</sup>:`Tree = rpart(outcome ~ x + y + z, data = train, method="class", minbucket=25)`
 * tree plot: `prp(Tree)`
 * prediction <sup>(*)</sup>: `predict(Tree, newdata = test, type = "class")`
 
 <sup>(*): the `type="class"` is used to create predicted values and not probabilities</sup>
+<sup>(**): we can use other parameters to create the model instead of `minbucket`. One is by using the `cp` parameter, which optimal value can be determined by a CV method - see point 19 below - and/or add a penalty matrix to "balance" outcomes in multiclass classification: `Tree = rpart(outcome ~ x + y + z, data = train, method="class", parms=list(loss=PenaltyMatrix))` where `PenaltyMatrix` is a penalty matrix.</sup>
 
 ### 18) Random forests
 
@@ -176,7 +177,7 @@ Cross validation of 10 folds `number` and complexity parameter canditate paramet
 
 The cross validation returns the output cp table with the optimal cp value (cp<sub>opt</sub>)
 
-*Create a new CART model*<br>
+*Create a new CART model with cp parameter instead of minbucket*<br>
 `modelCV = rpart(outcome ~ x + y + z, data = train, method="class", cp = `cp<sub>opt</sub>`)`<br>
 <sub>we set the method classification since we're dealing with a classification problem</sub>
 
