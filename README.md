@@ -89,7 +89,7 @@ Remove NAs values: `na.omit(...)`
 `train = subset(data, spl == TRUE)`<br>
 `test = subset(data, spl == FALSE)`<br>
   
-### 14) Create ROC curves
+### 14) Create ROC curves (receiver operating characteristic)
 
 `library(ROCR)`<br>
 `# Prediction function`<br>
