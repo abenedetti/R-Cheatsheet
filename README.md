@@ -195,5 +195,16 @@ The cross validation returns the output cp table with the optimal cp value (cp<s
 `PredictCV = predict(StevensTreeCV, newdata = Test, type = "class")`<br>
 <sub>we set the method classification since we're dealing with a classification problem</sub>
 
+### 20) Remove variable while building a model
+
+Given a `train` and `test` sets, the dependent variable `outcome` and independent variables `x`, `y` and `z`.
+
+* we can remove a single variable with the `-`: `(...)outcome ~ . - y(...)`
+* we can remove a list of variable with:<br>
+  `nonvars = c("x", "z")`<br>
+  `trainPartial = train[ , !(names(train) %in% nonvars) ]`<br>
+  `testPartial = test[ , !(names(test) %in% nonvars) ]`<br>
+  `(...)outcome ~ ., data=trainPartial(...)`<br>
+
 
 
