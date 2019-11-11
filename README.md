@@ -93,7 +93,7 @@ Remove NAs values: `na.omit(...)`
 
 `library(ROCR)`<br>
 `# Prediction function`<br>
-`ROCRpred = prediction(`predictedValues`,` actualValues`)`<br>
+`ROCRpred = prediction(`predictedValues`,` actualValues`)`<sup>(*)</sup><br>
 `# Performance function`<br>
 `ROCRperf = performance(ROCRpred, "tpr", "fpr")`<br>
 `# Plot ROC curve`<br>
@@ -104,6 +104,8 @@ Remove NAs values: `na.omit(...)`
 `plot(ROCRperf, colorize=TRUE, print.cutoffs.at=seq(0,1,by=0.1), text.adj=c(-0.2,1.7))`<br>
 `# Calculate the AUC (area under the curve) of the model`<br>
 `as.numeric(performance(ROCRpred, "auc")@y.values)`
+  
+ <sup>(*): for CART the predicted probabilities of the test can be obtained by removing the type="class" argument when making predictions, and taking the second column of the resulting object.</sup>
   
 ### 15) Predictions with `lm` and `glm` packages
 
