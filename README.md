@@ -208,5 +208,25 @@ Given a `train` and `test` sets, the dependent variable `outcome` and independen
   `testPartial = test[ , !(names(test) %in% nonvars) ]`<br>
   `(...)outcome ~ ., data=trainPartial(...)`<br>
 
+### 21) Natural language pre processing
+
+Pre processing done by using the Bag of Words methods follows those steps in R:
+
+`library(tm)`<br>
+`library(SnowballC)`<br>
+`# create corpus`<br>
+`corpus = VCorpus(VectorSource(df$text_data_column))`<br>
+`# convert to lower-case`<br>
+`corpus = tm_map(corpus, content_transformer(tolower))`<br>
+`# remove punctuation`<br>
+`corpus = tm_map(corpus, removePunctuation)`<br>
+`# remove stopwords and/or other words`<br>
+`corpus = tm_map(corpus, removeWords, c("a_word_to_remove", stopwords("english")))`<br>
+`# stem document`<br>
+`corpus = tm_map(corpus, stemDocument)`<br>
+
+
+
+
 
 
