@@ -225,8 +225,18 @@ Pre processing done by using the Bag of Words methods follows those steps in R:
 `# stem document`<br>
 `corpus = tm_map(corpus, stemDocument)`<br>
 
-
-
+`# create matrix that contains the number of occurrence of each word`<br>
+`frequencies = DocumentTermMatrix(corpus)`<br>
+`# look at matrix `<br>
+`inspect(frequencies[1000:1005,505:515])`<br>
+`# check for sparsity`<br>
+`findFreqTerms(frequencies, lowfreq=20)`<br>
+`# remove sparse terms`<br>
+`sparse = removeSparseTerms(frequencies, 0.995)`<br>
+`# convert to a data frame`<br>
+`dfSparse = as.data.frame(as.matrix(sparse))`<br>
+`# make all variable names R-friendly`<br>
+`colnames(dfSparse) = make.names(colnames(dfSparse))`<br>
 
 
 
