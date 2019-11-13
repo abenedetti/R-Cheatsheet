@@ -212,6 +212,7 @@ Given a `train` and `test` sets, the dependent variable `outcome` and independen
 
 Pre processing done by using the Bag of Words methods follows those steps in R:
 
+`df = read.csv("a_file.csv", stringsAsFactors=FALSE)`<br>
 `library(tm)`<br>
 `library(SnowballC)`<br>
 `# create corpus`<br>
