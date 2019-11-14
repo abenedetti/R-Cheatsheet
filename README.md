@@ -233,7 +233,7 @@ Pre processing done by using the Bag of Words methods follows those steps in R:
 `# check for sparsity`<br>
 `findFreqTerms(frequencies, lowfreq=20)`<br>
 `# remove sparse terms`<br>
-`sparse = removeSparseTerms(frequencies, 0.995)`<br>
+`sparse = removeSparseTerms(frequencies, 0.97)` <sub>we'll remove any term that doesn't appear in at least 3% of the documents</sub><br>
 `# convert to a data frame`<br>
 `dfSparse = as.data.frame(as.matrix(sparse))`<br>
 `# make all variable names R-friendly`<br>
