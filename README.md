@@ -159,7 +159,7 @@ Given a `train` and `test` sets, the dependent variable `outcome` and independen
 * accuracy of the model can be assessed through the SSE calculation
 
 
-<sup>(*): the `type="class"` is used to create predicted values and not probabilities</sup><br>
+<sup>(*): the `type="class"` is used to create predicted values and not probabilities, it is equivalent to a threshold of 0.5</sup><br>
 <sup>(**): we can use other parameters to create the model instead of `minbucket`. One is by using the `cp` parameter, which optimal value can be determined by a CV method - see point 19 below - and/or add a penalty matrix to "balance" outcomes in multiclass classification: `Tree = rpart(outcome ~ x + y + z, data = train, method="class", parms=list(loss=PenaltyMatrix))` where `PenaltyMatrix` is a penalty matrix.</sup>
 
 ### 18) Random forests
