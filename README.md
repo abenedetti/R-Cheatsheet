@@ -243,5 +243,5 @@ Pre processing done by using the Bag of Words methods follows those steps in R:
 
 ### 22) Create a dataframe column based on conditions
 
-df$newColumn = ifelse(grepl(stringToSearch,df$ColumnSearchWithin,fixed=TRUE), newValueIfTrue, newValueIfFalse)
+`df$newColumn = ifelse(grepl(stringToSearch,df$ColumnSearchWithin,fixed=TRUE), newValueIfTrue, newValueIfFalse)`
 
