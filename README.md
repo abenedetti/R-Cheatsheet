@@ -241,5 +241,7 @@ Pre processing done by using the Bag of Words methods follows those steps in R:
 `# make all variable names R-friendly`<br>
 `colnames(dfSparse) = make.names(colnames(dfSparse))`<br>
 
+### 22) Create a dataframe column based on conditions
 
+df$newColumn = ifelse(grepl(stringToSearch,df$ColumnSearchWithin,fixed=TRUE), newValueIfTrue, newValueIfFalse)
 
