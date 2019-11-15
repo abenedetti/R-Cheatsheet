@@ -225,6 +225,8 @@ Pre processing done by using the Bag of Words methods follows those steps in R:
 `corpus = tm_map(corpus, removeWords, c("a_word_to_remove", stopwords("english")))`<br>
 `# stem document`<br>
 `corpus = tm_map(corpus, stemDocument)`<br>
+`# look at the corpus content`<br>
+`corpus[[1]]$content`<br>
 
 `# create matrix that contains the number of occurrence of each word`<br>
 `frequencies = DocumentTermMatrix(corpus)`<br>
