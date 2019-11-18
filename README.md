@@ -169,7 +169,9 @@ Given a `train` and `test` sets, the dependent variable `outcome` and independen
 Given a `train` and `test` sets, the dependent variable `outcome` and independent variables `x`, `y` and `z`.
 
 `modelRF <- randomForest(outcome ~ x + y + z, data = train, ntree=`<number of trees>`, nodesize=`<eqv to minbuckey value>`)`<br>
-`predictRF <- predict(modelRF, newdata = test)`
+`predictRF <- predict(modelRF, newdata = test)`<sup>(*)</sup><br>
+
+<sup>(*): you can obtain probabilities for a random forest by adding the argument `type="prob"`</sup><br>
 
 ### 19) Cross validation
 
