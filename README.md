@@ -247,7 +247,7 @@ Pre processing done by using the Bag of Words methods follows those steps in R:
 
 `df$newColumn = ifelse(grepl(stringToSearch,df$ColumnSearchWithin,fixed=TRUE), newValueIfTrue, newValueIfFalse)`
 
-### 23) Hierchical clustering
+### 23) Hierarchical clustering
 
 * compute euclidean distance: `distances = dist(df, method = "euclidean")`<br>
 * create the hierarchical clustering: `clusterDf <- hclust(distances, method = "ward.D")`<br>
