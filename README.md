@@ -168,7 +168,7 @@ Given a `train` and `test` sets, the dependent variable `outcome` and independen
 
 Given a `train` and `test` sets, the dependent variable `outcome` and independent variables `x`, `y` and `z`.
 
-`modelRF <- randomForest(outcome ~ x + y + z, data = train, ntree=`<number of trees>`, nodesize=`<eqv to minbuckey value>`)`<br>
+`modelRF <- randomForest(outcome ~ x + y + z, data = train, ntree=<number of trees>, nodesize=<eqv to minbuckey value>)`<br>
 `predictRF <- predict(modelRF, newdata = test)`<sup>(*)</sup><br>
 
 <sup>(*): you can obtain probabilities for a random forest by adding the argument `type="prob"`</sup><br>
@@ -247,3 +247,9 @@ Pre processing done by using the Bag of Words methods follows those steps in R:
 
 `df$newColumn = ifelse(grepl(stringToSearch,df$ColumnSearchWithin,fixed=TRUE), newValueIfTrue, newValueIfFalse)`
 
+### 23) Hierchical clustering
+
+* compute euclidean distance: `distances = dist(df, method = "euclidean")`<br>
+* create the hierarchical clustering: `clusterDf <- hclust(distances, method = "ward.D")`<br>
+* plot the dendrogram: `plot(clusterDf)`<br>
+* assign points to clusters: `clusterGroups = cutree(clusterDf, k = <num of clusters>)`<br>
