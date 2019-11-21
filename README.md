@@ -70,6 +70,8 @@ Follow this [complete guide](https://cran.r-project.org/web/packages/kableExtra/
 `tapply(argument 1, argument 2 , argument 3)`<br>
 tapply splits (groups) the data by the second argument you give, and then applies the third argument function to the variable given as the first argument.<br>
 
+[Using apply, sapply, lapply in R](https://www.r-bloggers.com/using-apply-sapply-lapply-in-r/)<br>
+
 ### 12) Working with NAs
 
 Remove NAs values: `na.omit(...)`
@@ -254,13 +256,29 @@ Pre processing done by using the Bag of Words methods follows those steps in R:
 * plot the dendrogram: `plot(clusterDf)`<br>
 * plot the clusters: `rect.hclust(clusterDf, k = <num of selected clusters>, border = "red")`
 * assign points to clusters: `clusterGroups = cutree(clusterDf, k = <num of clusters>)`<br>
-* plot the image: `image(imagePixelsMatrix,axes=FALSE,col=grey(seq(0,1,length=256)))`<br>
+* visualize the cluster:<br>
+`dim(clusterDf) = c(nrow(dfMatrix), ncol(dfMatrix))`<br>
+`image(clusterDf, axes=FALSE, col=grey(seq(0,1,length=256)))`<br>
 
 ### 24) k-Means clustering
 
+Let's have a train data set:<br>
+`dataTrainMatrix = as.matrix(dataTrain)`<br>
+`dataTrainVector = as.vector(dataTrainMatrix)`<br>
+
 * specify number of clusters: `k = 5`<br>
-* run k-means: `KMC = kmeans(aVector, centers = k, iter.max = 1000)<br>
+* run k-means: `KMC = kmeans(dataTrainVector, centers = k, iter.max = 1000)<br>
 * view cluster data: `str(KMC)`<br>
+
+* apply the k-means clustering results (train) to a test set:<br>
+`library(flexclust)`<br>
+`KMC.kcca = as.kcca(KMC, dataTrainVector)`<br>
+`dataTestClusters = predict(KMC.kcca, newdata = dataTestVector)`<br>
+
+* visualize the cluster:<br>
+`dim(dataTestClusters) = c(nrow(dataTestMatrix), ncol(dataTestMatrix))`<br>
+`image(dataTestClusters, axes=FALSE, col=rainbow(k))`<br>
+
 
 ### 25) Clustering scree plots
 
