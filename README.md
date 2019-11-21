@@ -261,3 +261,15 @@ Pre processing done by using the Bag of Words methods follows those steps in R:
 * specify number of clusters: `k = 5`<br>
 * run k-means: `KMC = kmeans(aVector, centers = k, iter.max = 1000)<br>
 * view cluster data: `str(KMC)`<br>
+
+### 25) Clustering scree plots
+
+A standard scree plot has the number of clusters on the x-axis, and the sum of the within-cluster sum of squares on the y-axis. The within-cluster sum of squares for a cluster is the sum, across all points in the cluster, of the squared distance between each point and the centroid of the cluster.  We ideally want very small within-cluster sum of squares, since this means that the points are all very close to their centroid.<br>
+
+* define the range of clusters: `NumClusters = seq(2,10,1)`<br>
+* define within-cluster sum of squares: `SumWithinss = sapply(2:10, function(x) sum(kmeans(dfVector, centers=x, iter.max=1000)$withinss))`<br>
+* plot the scree plot: `plot(NumClusters, SumWithinss, type="b")`<br>
+
+To determine the best number of clusters using this plot, we want to look for a bend, or elbow, in the plot. This means that we want to find the number of clusters for which increasing the number of clusters further does not significantly help to reduce the within-cluster sum of squares.
+
+
