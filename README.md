@@ -254,8 +254,10 @@ Pre processing done by using the Bag of Words methods follows those steps in R:
 * plot the dendrogram: `plot(clusterDf)`<br>
 * plot the clusters: `rect.hclust(clusterDf, k = <num of selected clusters>, border = "red")`
 * assign points to clusters: `clusterGroups = cutree(clusterDf, k = <num of clusters>)`<br>
+* plot the image: `image(imagePixelsMatrix,axes=FALSE,col=grey(seq(0,1,length=256)))`<br>
 
 ### 24) k-Means clustering
 
-
-
+* specify number of clusters: `k = 5`<br>
+* run k-means: `KMC = kmeans(aVector, centers = k, iter.max = 1000)<br>
+* view cluster data: `str(KMC)`<br>
