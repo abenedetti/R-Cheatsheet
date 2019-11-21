@@ -252,4 +252,10 @@ Pre processing done by using the Bag of Words methods follows those steps in R:
 * compute euclidean distance: `distances = dist(df, method = "euclidean")`<br>
 * create the hierarchical clustering: `clusterDf <- hclust(distances, method = "ward.D")`<br>
 * plot the dendrogram: `plot(clusterDf)`<br>
+* plot the clusters: `rect.hclust(clusterDf, k = <num of selected clusters>, border = "red")`
 * assign points to clusters: `clusterGroups = cutree(clusterDf, k = <num of clusters>)`<br>
+
+### 24) k-Means clustering
+
+
+
