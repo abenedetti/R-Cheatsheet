@@ -291,6 +291,8 @@ To determine the best number of clusters using this plot, we want to look for a 
 
 ### 26) Normalize dataframe variables (preprocess)
 
+Standardization/normalization is a procedure that leads to a random variable distributed according to an average μ and variance σ<sup>2</sup>, to a random variable with a "standard" distribution, that is to say zero mean and variance equal to 1.<br>
+
 `library(caret)`<br>
 `preproc = preProcess(dfRaw)`<br>
 `dfNorm = predict(preproc, dfRaw)`<br>
