@@ -297,4 +297,6 @@ Standardization/normalization is a procedure that leads to a random variable dis
 `preproc = preProcess(dfRaw)`<br>
 `dfNorm = predict(preproc, dfRaw)`<br>
 
+### 27) Working with dates
 
+Format text to date: `strptime(df$dateInText, format = "%m/%d/%y %H:%M")`
