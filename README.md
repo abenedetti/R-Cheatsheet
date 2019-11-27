@@ -306,5 +306,9 @@ Format text to date: `strptime(df$dateInText, format = "%m/%d/%y %H:%M")`
 
 `ggplot(<df>, aes(x=<x>, y=<y>)) + geom_line(<aes(group=1)>) + xlab(<title>) + ylab(<title>)`
 
+### 29) Convert factor variable to numeric
+
+`df$NumVar <- as.numeric(as.character(df$FactVar))`
+
 
 
