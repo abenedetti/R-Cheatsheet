@@ -304,11 +304,19 @@ Format text to date: `strptime(df$dateInText, format = "%m/%d/%y %H:%M")`
 
 ### 28) Ggplot2 basics
 
-line plot: `ggplot(<df>, aes(x=<x>, y=<y>)) + geom_line(<aes(group=1)>) + xlab(<title>) + ylab(<title>)`<br>
-heatmap: `ggplot(<df>, aes(x=<x>, y=<y>)) + geom_tile(<aes(fill=<FillVar>)>) + scale_fill_gradient(name=<legend name>, low=<lowCol>, high=<highCol>) + theme(axis.title.y = element_blank())`<br>
+* line plot: `ggplot(<df>, aes(x=<x>, y=<y>)) + geom_line(<aes(group=1)>) + xlab(<title>) + ylab(<title>)`<br>
 
+* heatmap: `ggplot(<df>, aes(x=<x>, y=<y>)) + geom_tile(<aes(fill=<FillVar>)>) + scale_fill_gradient(name=<legend name>, low=<lowCol>, high=<highCol>) + theme(axis.title.y = element_blank())`<br>
 
-
+* maps:<br>
+`library(maps)`<br>
+`library(ggmap)`<br>
+`# Load a map of Chicago into R:`<br>
+`chicago = get_map(location = "chicago", zoom = 11)`<br>
+`# Look at the map`<br>
+`ggmap(chicago)`<br>
+`# Plot on the map:`<br>
+`ggmap(chicago) + geom_point(data = df, aes(x = Longitude, y = Latitude))`<br>
 
 ### 29) Convert factor variable to numeric
 
