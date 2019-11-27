@@ -300,3 +300,11 @@ Standardization/normalization is a procedure that leads to a random variable dis
 ### 27) Working with dates
 
 Format text to date: `strptime(df$dateInText, format = "%m/%d/%y %H:%M")`
+
+
+### 28) Ggplot2 basics
+
+`ggplot(<df>, aes(x=<x>, y=<y>)) + geom_line(<aes(group=1)>) + xlab(<title>) + ylab(<title>)`
+
+
+
