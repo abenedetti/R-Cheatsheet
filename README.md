@@ -318,6 +318,21 @@ Format text to date: `strptime(df$dateInText, format = "%m/%d/%y %H:%M")`
 `# Plot on the map:`<br>
 `ggmap(chicago) + geom_point(data = df, aes(x = Longitude, y = Latitude))`<br>
 
+`library(ggplot2)`<br>
+`library(maps)`<br>
+`library(ggmap)`<br>
+
+`#draw us states map`<br>
+`statesMap <- map_data("state")`<br>
+`ggplot(statesMap, aes(x = long, y = lat, group = group)) + geom_polygon(fill = "white", color = "black")`<br>
+
+<sub>The structure of the state contains a variable named *group*, that defines the different shapes or polygons on the map. Sometimes a state may have multiple groups, for example, if it includes islands. The variable *order* defines the order to connect the points within each *group*, and the variable *region* gives the name of the state.</sub>
+
+
+
+
+
+
 ### 29) Convert factor variable to numeric
 
 `df$NumVar <- as.numeric(as.character(df$FactVar))`
