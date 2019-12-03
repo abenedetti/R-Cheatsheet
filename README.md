@@ -327,14 +327,22 @@ Format text to date: `strptime(df$dateInText, format = "%m/%d/%y %H:%M")`
 `ggplot(statesMap, aes(x = long, y = lat, group = group)) + geom_polygon(fill = "white", color = "black")`<br>
 <sub>The structure of the state contains a variable named *group*, that defines the different shapes or polygons on the map. Sometimes a state may have multiple groups, for example, if it includes islands. The variable *order* defines the order to connect the points within each *group*, and the variable *region* gives the name of the state.</sub>
 
-
-
-
-
-
 ### 29) Convert factor variable to numeric
 
 `df$NumVar <- as.numeric(as.character(df$FactVar))`
+
+### 30) Working with igraph
+
+`library(igraph)`<br>
+`g = graph.data.frame(d, FALSE, vertices) #load a graph object`<br>
+`plot(g, vertex.size=5, vertex.label=NA) #plot a graph by setting the vertices size`<br>
+`degree(g) #retrieve the graph degree`<br>
+`V(g)$size V(g)$color #set graph properties on size & color`<br>
+
+### 30) Working with wordcloud
+
+`library(wordcloud)`<br>
+`wordcloud(<words>,<words frequencies>, scale = c(2, 0.25))`
 
 
 
