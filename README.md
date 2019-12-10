@@ -304,6 +304,16 @@ Format text to date: `strptime(df$dateInText, format = "%m/%d/%y %H:%M")`
 
 ### 28) Ggplot2 basics
 
+* ggplot code template:<br>
+`ggplot(data = <DATA>) +`<br> 
+`  <GEOM_FUNCTION>(`<br>
+`     mapping = aes(<MAPPINGS>),`<br>
+`     stat = <STAT>,`<br>
+`     position = <POSITION>`<br>
+`  ) +`<br>
+`  <COORDINATE_FUNCTION> +`<br>
+`  <FACET_FUNCTION>`<br>
+
 * line plot: `ggplot(<df>, aes(x=<x>, y=<y>)) + geom_line(<aes(group=1)>) + xlab(<title>) + ylab(<title>)`<br>
 
 * heatmap: `ggplot(<df>, aes(x=<x>, y=<y>)) + geom_tile(<aes(fill=<FillVar>)>) + scale_fill_gradient(name=<legend name>, low=<lowCol>, high=<highCol>) + theme(axis.title.y = element_blank())`<br>
