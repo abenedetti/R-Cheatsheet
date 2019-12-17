@@ -65,6 +65,8 @@ Follow this [complete guide](https://cran.r-project.org/web/packages/kableExtra/
 `library(ISLR)`<br>
 `library(GGally)`<br>
 `ggpairs(iris)`<br>
+
+base correlation statement: `cor(...)`<br>
  
 ### 11) Using <i>tapply</i> function
 `tapply(argument 1, argument 2 , argument 3)`<br>
@@ -198,7 +200,7 @@ The cross validation returns the output cp table with the optimal cp value (cp<s
 <sub>we set the method classification since we're dealing with a classification problem</sub>
 
 *Make predictions*<br>
-`PredictCV = predict(StevensTreeCV, newdata = Test, type = "class")`<br>
+`PredictCV = predict(modelCV, newdata = Test, type = "class")`<br>
 <sub>we set the method classification since we're dealing with a classification problem</sub>
 
 ### 20) Remove variable while building a model
@@ -354,5 +356,18 @@ Format text to date: `strptime(df$dateInText, format = "%m/%d/%y %H:%M")`
 `library(wordcloud)`<br>
 `wordcloud(<words>,<words frequencies>, scale = c(2, 0.25))`
 
+### 31) Sum of squared errors, root mean squared error & R<sup>2</sup>
+
+Let's have a `train` and `test` dataset and a linear model with a continuous outcome:
+
+`SSE <- sum(linearModel$residuals^2)`<br>
+`RMSE <- sqrt(SSE/nrow(train))`<br>
+
+While the out-of-sample R<sup>2</sup>:<br>
+`SSE_oos = sum((modelPredictions - test$outcome)^2)`<br>
+`SST_oos = sum((mean(train$outcome) - test$outcome)^2)`<br>
+`R2_oos = 1 - SSE_oos/SST_oos`<br>
+
+R<sup>2</sup> is the fraction of variability in the dataset that is explained by the model, and will always be between 0 and 1. But this is valid only for the train dataset.
 
 
