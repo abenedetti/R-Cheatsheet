@@ -370,4 +370,7 @@ While the out-of-sample R<sup>2</sup>:<br>
 
 R<sup>2</sup> is the fraction of variability in the dataset that is explained by the model, and will always be between 0 and 1. But this is valid only for the train dataset.
 
+### 32) Fill up a time series
+
+[https://bocoup.com/blog/padding-time-series-with-r](https://bocoup.com/blog/padding-time-series-with-r)
 
